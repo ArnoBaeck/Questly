@@ -8,11 +8,13 @@
 import Foundation
 
 class IndexModel: ObservableObject {
+    let loginController = LoginController()
+
     func login() {
-        print("Login button pressed - hier komt de login logica")
+        loginController.tryLogin()
     }
 
     func signIn() {
-        print("Sign In button pressed - hier komt de registratie logica")
+        loginController.createUser(name: "John Doe", birthdate: "01/01/2000")
     }
 }

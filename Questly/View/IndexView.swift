@@ -15,6 +15,8 @@ struct IndexView: View {
     @State private var currentOffset: CGFloat = -40
     @State private var previousOffset: CGFloat = 0
     @State private var showOpacity = false
+    @StateObject var loginController = LoginController()
+    @State private var showRegisterSheet = false
     
     private let dynamicWords = ["mission", "reward"]
     private let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
@@ -73,7 +75,7 @@ struct IndexView: View {
 
                 VStack(spacing: 20) {
                     Button(action: {
-                        viewModel.login()
+                        loginController.tryLogin()
                     }) {
                         Text("Login")
                             .font(.headline)
@@ -86,7 +88,7 @@ struct IndexView: View {
                     }
 
                     Button(action: {
-                        viewModel.signIn()
+                        showRegisterSheet = true
                     }) {
                         Text("Sign In")
                             .padding()
@@ -95,6 +97,9 @@ struct IndexView: View {
                             .foregroundColor(.black)
                             .cornerRadius(100)
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 0)
+                    }
+                    .sheet(isPresented: $showRegisterSheet) {
+                        RegisterSheet(controller: loginController, isPresented: $showRegisterSheet)
                     }
                 }
                 .padding(.bottom, 50)
