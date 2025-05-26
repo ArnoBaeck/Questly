@@ -11,7 +11,7 @@ import SwiftUI
 struct QuestlyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            IndexView()
         }
     }
 }

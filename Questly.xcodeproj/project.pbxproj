@@ -35,16 +35,6 @@
 			path = Questly;
 			sourceTree = "<group>";
 		};
-		1A84FC972DA51CA100DC4135 /* QuestlyTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = QuestlyTests;
-			sourceTree = "<group>";
-		};
-		1A84FCA12DA51CA100DC4135 /* QuestlyUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = QuestlyUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				1A84FC862DA51CA000DC4135 /* Questly */,
-				1A84FC972DA51CA100DC4135 /* QuestlyTests */,
-				1A84FCA12DA51CA100DC4135 /* QuestlyUITests */,
 				1A84FC852DA51CA000DC4135 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				1A84FC962DA51CA100DC4135 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				1A84FC972DA51CA100DC4135 /* QuestlyTests */,
-			);
 			name = QuestlyTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				1A84FCA02DA51CA100DC4135 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				1A84FCA12DA51CA100DC4135 /* QuestlyUITests */,
 			);
 			name = QuestlyUITests;
 			packageProductDependencies = (
@@ -396,6 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Questly/Preview Content\"";
+				DEVELOPMENT_TEAM = 85RGHVB2K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -424,6 +407,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Questly/Preview Content\"";
+				DEVELOPMENT_TEAM = 85RGHVB2K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
