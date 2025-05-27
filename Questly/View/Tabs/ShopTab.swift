@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct ShopTab: View {
+    var body: some View {
+        Text("Shop coming soon...")
+            .padding()
+    }
+}

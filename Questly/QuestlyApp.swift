@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct QuestlyApp: App {
+    @StateObject var controller = LoginController()
+
     var body: some Scene {
         WindowGroup {
-            IndexView()
+            ContentRouter(controller: controller)
         }
     }
 }

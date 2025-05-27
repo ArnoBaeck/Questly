@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct IndexView: View {
-    @StateObject private var viewModel = IndexModel()
+    @ObservedObject var controller: LoginController
     
     @State private var currentIndex = 0
     @State private var previousIndex = 0
     @State private var currentOffset: CGFloat = -40
     @State private var previousOffset: CGFloat = 0
     @State private var showOpacity = false
-    @StateObject var loginController = LoginController()
     @State private var showRegisterSheet = false
     
     private let dynamicWords = ["mission", "reward"]
@@ -75,7 +74,7 @@ struct IndexView: View {
 
                 VStack(spacing: 20) {
                     Button(action: {
-                        loginController.tryLogin()
+                        controller.tryLogin()
                     }) {
                         Text("Login")
                             .font(.headline)
@@ -99,9 +98,8 @@ struct IndexView: View {
                             .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 0)
                     }
                     .sheet(isPresented: $showRegisterSheet) {
-                        RegisterSheet(controller: loginController, isPresented: $showRegisterSheet)
-                    }
-                }
+                        RegisterSheet(controller: controller, isPresented: $showRegisterSheet)
+                    }                }
                 .padding(.bottom, 50)
             }
             .padding()
@@ -126,5 +124,5 @@ struct IndexView: View {
 }
 
 #Preview {
-    IndexView()
+    IndexView(controller: LoginController())
 }

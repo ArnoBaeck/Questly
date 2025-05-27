@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct ChallengesTab: View {
+    var body: some View {
+        Text("Challanges comming soon...")
+            .padding()
+    }
+}
