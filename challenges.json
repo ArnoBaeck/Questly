@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Compare Supermarket Prices",
+    "description": "Visit a nearby supermarket and take a photo of a product price. Compare it to online prices.",
+    "reward": 15,
+    "deadline": "2025-06-05",
+    "location": "Delhaize, Elsene",
+    "lat": 50.8262,
+    "lon": 4.3665
+  },
+  {
+    "title": "Evaluate Window Display",
+    "description": "Go to the specified shop and rate how visually appealing the window display is.",
+    "reward": 10,
+    "deadline": "2025-06-03",
+    "location": "Zara, Nieuwstraat Brussel",
+    "lat": 50.8512,
+    "lon": 4.3524
+  },
+  {
+    "title": "Check Stock Availability",
+    "description": "Go to a store and check if a specific product is available on shelves.",
+    "reward": 20,
+    "deadline": "2025-06-06",
+    "location": "MediaMarkt, Anspachlaan",
+    "lat": 50.8474,
+    "lon": 4.3490
+  },
+  {
+    "title": "Take a Photo of Storefront",
+    "description": "Take a picture of a specific store’s entrance and upload it.",
+    "reward": 8,
+    "deadline": "2025-06-02",
+    "location": "Fnac, City 2",
+    "lat": 50.8531,
+    "lon": 4.3550
+  },
+  {
+    "title": "Count Visitors",
+    "description": "Observe and count how many people enter a store in 10 minutes.",
+    "reward": 25,
+    "deadline": "2025-06-04",
+    "location": "H&M, Westland Shopping",
+    "lat": 50.8321,
+    "lon": 4.3008
+  },
+  {
+    "title": "Check Store Cleanliness",
+    "description": "Evaluate the cleanliness of the store (floors, shelves, toilets).",
+    "reward": 12,
+    "deadline": "2025-06-07",
+    "location": "Carrefour, Evere",
+    "lat": 50.8733,
+    "lon": 4.3974
+  },
+  {
+    "title": "Test Customer Service",
+    "description": "Ask a product-related question and rate how helpful the staff was.",
+    "reward": 18,
+    "deadline": "2025-06-08",
+    "location": "Decathlon, Evere",
+    "lat": 50.8698,
+    "lon": 4.3944
+  },
+  {
+    "title": "Measure Checkout Time",
+    "description": "Buy a cheap item and time how long the full checkout takes.",
+    "reward": 10,
+    "deadline": "2025-06-06",
+    "location": "Colruyt, Schaarbeek",
+    "lat": 50.8659,
+    "lon": 4.3747
+  },
+  {
+    "title": "Review In-Store Promotion",
+    "description": "Take a photo of an in-store promotion and describe if it was clear and attractive.",
+    "reward": 14,
+    "deadline": "2025-06-09",
+    "location": "Kruidvat, Jette",
+    "lat": 50.8725,
+    "lon": 4.3202
+  },
+  {
+    "title": "Count Parking Availability",
+    "description": "Count how many parking spaces are available at a store location.",
+    "reward": 6,
+    "deadline": "2025-06-05",
+    "location": "IKEA, Anderlecht",
+    "lat": 50.8281,
+    "lon": 4.3062
+  }
+]
