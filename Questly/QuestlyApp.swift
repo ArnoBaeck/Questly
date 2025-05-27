@@ -11,6 +11,10 @@ import SwiftUI
 struct QuestlyApp: App {
     @StateObject var controller = LoginController()
 
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.white
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentRouter(controller: controller)

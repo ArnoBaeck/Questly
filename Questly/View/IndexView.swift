@@ -54,15 +54,13 @@ struct IndexView: View {
                         Text(dynamicWords[previousIndex])
                             .font(.title)
                             .bold()
-                            .offset(y: previousOffset)
+                            .offset(y: previousOffset.isNaN ? 0 : previousOffset)
                             .opacity(showOpacity ? 0 : 1)
-
                         Text(dynamicWords[currentIndex])
                             .font(.title)
                             .bold()
-                            .offset(y: currentOffset)
-                            .opacity(showOpacity ? 1 : 0)
-                    }
+                            .offset(y: currentOffset.isNaN ? 0 : currentOffset)
+                            .opacity(showOpacity ? 1 : 0)                    }
                     .frame(height: 40, alignment: .leading)
                     .clipped()
                 }

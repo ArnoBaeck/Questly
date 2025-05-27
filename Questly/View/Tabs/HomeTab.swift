@@ -7,19 +7,24 @@
 
 import Foundation
 import SwiftUI
+import MapKit
+import CoreLocation
 
 struct HomeTab: View {
     var user: UserModel?
 
     var body: some View {
-        VStack {
-            if let user = user {
-                Text("Welcome back, \(user.username)!")
-                    .font(.title)
-            } else {
-                Text("Welcome!")
+        ZStack {
+            Color.white
+                .ignoresSafeArea()
+
+            VStack(spacing: 0) {
+                Spacer().frame(height: 16)
+
+                MapView()
+                Spacer()
             }
+            .ignoresSafeArea()
         }
-        .padding()
     }
 }

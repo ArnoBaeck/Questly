@@ -24,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A615BB72DE5EA3400A14D95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1A84FC842DA51CA000DC4135 /* Questly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A84FC942DA51CA100DC4135 /* QuestlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A84FC9E2DA51CA100DC4135 /* QuestlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +68,7 @@
 			children = (
 				1A84FC862DA51CA000DC4135 /* Questly */,
 				1A84FC852DA51CA000DC4135 /* Products */,
+				1A615BB72DE5EA3400A14D95 /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -380,7 +382,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Questly/Preview Content\"";
 				DEVELOPMENT_TEAM = 85RGHVB2K4;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -409,7 +412,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Questly/Preview Content\"";
 				DEVELOPMENT_TEAM = 85RGHVB2K4;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

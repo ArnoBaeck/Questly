@@ -13,6 +13,8 @@ struct ProfileTab: View {
 
     var body: some View {
         VStack(spacing: 20) {
+            Spacer().frame(height: 16)
+
             if let user = controller.currentUser {
                 Text("👤 \(user.username)")
                 Text("🎂 \(user.birthdate)")
@@ -25,7 +27,10 @@ struct ProfileTab: View {
             .background(Color.red)
             .foregroundColor(.white)
             .cornerRadius(10)
+
+            Spacer()
         }
         .padding()
+        .background(Color.white.ignoresSafeArea())
     }
 }

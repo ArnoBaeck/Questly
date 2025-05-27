@@ -10,7 +10,14 @@ import SwiftUI
 
 struct ChallengesTab: View {
     var body: some View {
-        Text("Challanges comming soon...")
-            .padding()
+        VStack {
+            Text("Challenges coming soon...")
+                .font(.title)
+                .padding(.horizontal)
+
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.white.ignoresSafeArea())
     }
 }

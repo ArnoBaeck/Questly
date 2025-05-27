@@ -10,7 +10,15 @@ import SwiftUI
 
 struct ShopTab: View {
     var body: some View {
-        Text("Shop coming soon...")
-            .padding()
+        VStack(spacing: 0) {
+            Spacer().frame(height: 16)
+
+            Text("Shop coming soon...")
+                .font(.title)
+                .padding()
+
+            Spacer()
+        }
+        .background(Color.white.ignoresSafeArea())
     }
 }
