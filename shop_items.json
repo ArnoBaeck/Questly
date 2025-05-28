@@ -1,47 +1,47 @@
 [
-  {
-    "id": 1,
-    "title": "€5 Bol.com Gift Card",
-    "description": "Receive a digital €5 Bol.com gift card code.",
-    "price": 100,
-    "provider": "Bol.com",
-    "code": "BOL-5-EUR-XXXXXX",
-    "image": "shop_placeholder.png"
-  },
-  {
-    "id": 2,
-    "title": "€10 Amazon Gift Card",
-    "description": "Receive a digital €10 Amazon gift card code.",
-    "price": 180,
-    "provider": "Amazon",
-    "code": "AMZ-10-EUR-XXXXXX",
-    "image": "shop_placeholder.png"
-  },
-  {
-    "id": 3,
-    "title": "€15 PlayStation Store Gift Card",
-    "description": "Use this for games, add-ons and more in the PlayStation Store.",
-    "price": 250,
-    "provider": "PlayStation",
-    "code": "PSN-15-EUR-XXXXXX",
-    "image": "shop_placeholder.png"
-  },
-  {
-    "id": 4,
-    "title": "€20 Steam Gift Card",
-    "description": "Buy your favorite games on Steam with this €20 code.",
-    "price": 300,
-    "provider": "Steam",
-    "code": "STEAM-20-EUR-XXXXXX",
-    "image": "shop_placeholder.png"
-  },
-  {
-    "id": 5,
-    "title": "€10 iTunes Gift Card",
-    "description": "Perfect for apps, music, and more via the Apple Store.",
-    "price": 180,
-    "provider": "Apple",
-    "code": "ITUNES-10-EUR-XXXXXX",
-    "image": "shop_placeholder.png"
-  }
+    {
+        "id": "e3f9c2b1-8a7d-4c2e-9f1a-2b7e5d1c4f01",
+        "title": "€5 Bol.com Gift Card",
+        "description": "Receive a digital €5 Bol.com gift card code.",
+        "price": 100,
+        "provider": "Bol.com",
+        "code": "BOL-5-EUR-XXXXXX",
+        "image": "shop_placeholder.png"
+    },
+    {
+        "id": "a6b7d3e2-1c4f-4e9a-8b2d-7e5d1c4f02b2",
+        "title": "€10 Amazon Gift Card",
+        "description": "Receive a digital €10 Amazon gift card code.",
+        "price": 180,
+        "provider": "Amazon",
+        "code": "AMZ-10-EUR-XXXXXX",
+        "image": "shop_placeholder.png"
+    },
+    {
+        "id": "c4f01e3f-9c2b-4b1a-8a7d-2e9f1a2b7e5d",
+        "title": "€15 PlayStation Store Gift Card",
+        "description": "Use this for games, add-ons and more in the PlayStation Store.",
+        "price": 250,
+        "provider": "PlayStation",
+        "code": "PSN-15-EUR-XXXXXX",
+        "image": "shop_placeholder.png"
+    },
+    {
+        "id": "d1c4f01e-3f9c-2b18-a7d4-c2e9f1a2b7e5",
+        "title": "€20 Steam Gift Card",
+        "description": "Buy your favorite games on Steam with this €20 code.",
+        "price": 300,
+        "provider": "Steam",
+        "code": "STEAM-20-EUR-XXXXXX",
+        "image": "shop_placeholder.png"
+    },
+    {
+        "id": "b7e5d1c4-f01e-3f9c-2b18-a7d4c2e9f1a2",
+        "title": "€10 iTunes Gift Card",
+        "description": "Perfect for apps, music, and more via the Apple Store.",
+        "price": 180,
+        "provider": "Apple",
+        "code": "ITUNES-10-EUR-XXXXXX",
+        "image": "shop_placeholder.png"
+    }
 ]
