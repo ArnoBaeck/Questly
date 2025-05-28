@@ -48,4 +48,10 @@ class LoginController: ObservableObject {
         currentUser = user
         storage.saveUser(user: user)
     }
+    
+    func save() {
+        if let user = currentUser {
+            storage.saveUser(user: user)
+        }
+    }
 }
