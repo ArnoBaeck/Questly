@@ -41,4 +41,11 @@ class LoginController: ObservableObject {
         currentUser = user
         storage.saveUser(user: user)
     }
+    
+    func subtractCoins(amount: Int) {
+        guard var user = currentUser else { return }
+        user.coins -= amount
+        currentUser = user
+        storage.saveUser(user: user)
+    }
 }
