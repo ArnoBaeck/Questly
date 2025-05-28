@@ -11,4 +11,5 @@ struct UserModel: Codable {
     var username: String
     var birthdate: String
     var preferences: [String]
+    var coins: Int = 0
 }

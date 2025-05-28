@@ -1,5 +1,6 @@
 [
   {
+    "id": "compare-supermarket-prices",
     "title": "Compare Supermarket Prices",
     "description": "Visit a nearby supermarket and take a photo of a product price. Compare it to online prices.",
     "reward": 15,
@@ -9,6 +10,7 @@
     "lon": 4.3665
   },
   {
+    "id": "evaluate-window-display",
     "title": "Evaluate Window Display",
     "description": "Go to the specified shop and rate how visually appealing the window display is.",
     "reward": 10,
@@ -18,24 +20,27 @@
     "lon": 4.3524
   },
   {
+    "id": "check-stock-availability",
     "title": "Check Stock Availability",
     "description": "Go to a store and check if a specific product is available on shelves.",
     "reward": 20,
     "deadline": "2025-06-06",
     "location": "MediaMarkt, Anspachlaan",
     "lat": 50.8474,
-    "lon": 4.3490
+    "lon": 4.349
   },
   {
+    "id": "photo-storefront",
     "title": "Take a Photo of Storefront",
     "description": "Take a picture of a specific store’s entrance and upload it.",
     "reward": 8,
     "deadline": "2025-06-02",
     "location": "Fnac, City 2",
     "lat": 50.8531,
-    "lon": 4.3550
+    "lon": 4.355
   },
   {
+    "id": "count-visitors",
     "title": "Count Visitors",
     "description": "Observe and count how many people enter a store in 10 minutes.",
     "reward": 25,
@@ -45,6 +50,7 @@
     "lon": 4.3008
   },
   {
+    "id": "store-cleanliness",
     "title": "Check Store Cleanliness",
     "description": "Evaluate the cleanliness of the store (floors, shelves, toilets).",
     "reward": 12,
@@ -54,6 +60,7 @@
     "lon": 4.3974
   },
   {
+    "id": "customer-service-test",
     "title": "Test Customer Service",
     "description": "Ask a product-related question and rate how helpful the staff was.",
     "reward": 18,
@@ -63,6 +70,7 @@
     "lon": 4.3944
   },
   {
+    "id": "checkout-time",
     "title": "Measure Checkout Time",
     "description": "Buy a cheap item and time how long the full checkout takes.",
     "reward": 10,
@@ -72,6 +80,7 @@
     "lon": 4.3747
   },
   {
+    "id": "review-promotion",
     "title": "Review In-Store Promotion",
     "description": "Take a photo of an in-store promotion and describe if it was clear and attractive.",
     "reward": 14,
@@ -81,6 +90,7 @@
     "lon": 4.3202
   },
   {
+    "id": "count-parking",
     "title": "Count Parking Availability",
     "description": "Count how many parking spaces are available at a store location.",
     "reward": 6,

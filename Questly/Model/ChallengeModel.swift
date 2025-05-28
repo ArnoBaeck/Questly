@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 
 struct Challenge: Identifiable, Codable {
-    let id = UUID()
+    let id: String
     let title: String
     let description: String
     let reward: Int

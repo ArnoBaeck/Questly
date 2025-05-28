@@ -34,4 +34,11 @@ class LoginController: ObservableObject {
         currentUser = nil
         isLoggedIn = false
     }
+    
+    func addCoins(amount: Int) {
+        guard var user = currentUser else { return }
+        user.coins += amount
+        currentUser = user
+        storage.saveUser(user: user)
+    }
 }

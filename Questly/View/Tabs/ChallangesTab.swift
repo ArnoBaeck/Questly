@@ -13,24 +13,29 @@ struct ChallengesTab: View {
     @State private var challenges: [Challenge] = []
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                Text("All quests")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding(.horizontal)
-
-                ForEach(challenges) { challenge in
-                    ChallengeCard(challenge: challenge)
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("All quests")
+                        .font(.largeTitle)
+                        .bold()
                         .padding(.horizontal)
+
+                    ForEach(challenges) { challenge in
+                        NavigationLink(destination: ChallengeDetailView(challenge: challenge)) {
+                            ChallengeCard(challenge: challenge)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .padding(.horizontal)
+                    }
                 }
+                .padding(.top)
             }
-            .padding(.top)
+            .onAppear {
+                fetchChallenges()
+            }
+            .background(Color.white.ignoresSafeArea())
         }
-        .onAppear {
-            fetchChallenges()
-        }
-        .background(Color.white.ignoresSafeArea())
     }
 
     func fetchChallenges() {
@@ -73,16 +78,16 @@ struct ChallengeCard: View {
                 .frame(height: 150)
                 .cornerRadius(20)
                 .disabled(true)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.black.opacity(0.2), lineWidth: 1)
+                )
 
                 Text("\(challenge.reward) coins")
                     .font(.subheadline)
                     .bold()
                     .padding(6)
                     .background(Color.white)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color.black, lineWidth: 1)
-                    )
                     .cornerRadius(12)
                     .padding(8)
             }
@@ -104,10 +109,6 @@ struct ChallengeCard: View {
         }
         .background(Color.white)
         .cornerRadius(20)
-        .overlay(
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.black, lineWidth: 1)
-        )
         .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
     }
 }
