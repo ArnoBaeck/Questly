@@ -34,7 +34,15 @@ struct ChallengeDetailView: View {
                     center: challenge.coordinate,
                     span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
                 )), annotationItems: [challenge]) { _ in
-                    MapMarker(coordinate: challenge.coordinate, tint: .red)
+                    MapAnnotation(coordinate: challenge.coordinate) {
+                        Image(systemName: "flag.circle.fill")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.blue)
+                            .background(Color.white)
+                            .clipShape(Circle())
+                            .shadow(radius: 3)
+                    }
                 }
                 .frame(height: 200)
                 .cornerRadius(12)
@@ -106,7 +114,6 @@ struct ChallengeDetailView: View {
         }
     }
 
-
     func acceptChallenge() {
         guard !isAccepted && !isCompleted else { return }
 
@@ -132,7 +139,8 @@ struct ChallengeDetailView: View {
     }
 
     func statusKey(_ key: String) -> String {
-        return "challenge.\(challenge.id).\(key)"    }
+        return "challenge.\(challenge.id).\(key)"
+    }
 
     func saveStatus() {
         UserDefaults.standard.set(isAccepted, forKey: statusKey("accepted"))

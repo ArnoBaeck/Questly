@@ -24,15 +24,63 @@ struct MapView: View {
     }
 
     @State private var challenges: [Challenge] = []
+    @State private var selectedChallengeID: String?
 
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: challenges) { challenge in
-            MapMarker(coordinate: challenge.coordinate, tint: .red)
-        }
-        .ignoresSafeArea(edges: .top)
-        .onAppear {
-            requestUserLocation()
-            fetchChallenges()
+        NavigationStack {
+            Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: challenges) { challenge in
+                MapAnnotation(coordinate: challenge.coordinate) {
+                    VStack(spacing: 8) {
+                        // Marker knop
+                        Button(action: {
+                            withAnimation {
+                                if selectedChallengeID == challenge.id {
+                                    selectedChallengeID = nil
+                                } else {
+                                    selectedChallengeID = challenge.id
+                                }
+                            }
+                        }) {
+                            Image(systemName: "flag.circle.fill")
+                                .resizable()
+                                .frame(width: 34, height: 34)
+                                .foregroundColor(.blue)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .shadow(radius: 4)
+                        }
+
+                        // Beschrijving en knop
+                        if selectedChallengeID == challenge.id {
+                            VStack(spacing: 6) {
+                                Text(challenge.description)
+                                    .font(.subheadline) // iets groter dan caption
+                                    .multilineTextAlignment(.center)
+                                    .padding(6)
+                                    .background(Color.white)
+                                    .cornerRadius(8)
+                                    .shadow(radius: 2)
+
+                                NavigationLink(destination: ChallengeDetailView(challenge: challenge)) {
+                                    Text("More info")
+                                        .font(.caption)
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 4)
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(6)
+                                }
+                            }
+                            .frame(maxWidth: 180)
+                        }
+                    }
+                }
+            }
+            .ignoresSafeArea(edges: .top)
+            .onAppear {
+                requestUserLocation()
+                fetchChallenges()
+            }
         }
     }
 
@@ -53,13 +101,12 @@ struct MapView: View {
             return
         }
 
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { data, _, error in
             if let data = data {
                 do {
                     let decoded = try JSONDecoder().decode([Challenge].self, from: data)
                     DispatchQueue.main.async {
                         self.challenges = decoded
-                        print("Challenges loaded: \(decoded.count)")
                     }
                 } catch {
                     print("Decode error: \(error)")

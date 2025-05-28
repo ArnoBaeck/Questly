@@ -13,7 +13,7 @@ struct RegisterSheet: View {
     @Binding var isPresented: Bool
 
     @State private var name: String = ""
-    @State private var birthdate: String = ""
+    @State private var birthdate: Date = Date()
 
     var body: some View {
         NavigationView {
@@ -22,12 +22,33 @@ struct RegisterSheet: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
 
-                TextField("Birthdate (dd/mm/yyyy)", text: $birthdate)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Birthdate")
+                        .font(.subheadline)
+                        .bold()
+                        .padding(.horizontal)
+
+                    HStack {
+                        DatePicker("", selection: $birthdate, displayedComponents: .date)
+                            .datePickerStyle(.compact)
+                            .labelsHidden()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .padding(12)
+                    .background(Color.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.gray.opacity(0.4), lineWidth: 1)
+                    )
                     .padding(.horizontal)
+                }
 
                 Button("Create account") {
-                    controller.createUser(name: name, birthdate: birthdate)
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd/MM/yyyy"
+                    let formattedBirthdate = formatter.string(from: birthdate)
+
+                    controller.createUser(name: name, birthdate: formattedBirthdate)
                     isPresented = false
                 }
                 .padding()

@@ -65,7 +65,7 @@ struct ChallengeCard: View {
     var challenge: Challenge
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack(alignment: .topTrailing) {
                 Map(coordinateRegion: .constant(
                     MKCoordinateRegion(
@@ -73,7 +73,15 @@ struct ChallengeCard: View {
                         span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
                     )
                 ), annotationItems: [challenge]) { _ in
-                    MapMarker(coordinate: challenge.coordinate, tint: .red)
+                    MapAnnotation(coordinate: challenge.coordinate) {
+                        Image(systemName: "flag.circle.fill")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(.blue)
+                            .background(Color.white)
+                            .clipShape(Circle())
+                            .shadow(radius: 3)
+                    }
                 }
                 .frame(height: 150)
                 .cornerRadius(20)
@@ -110,5 +118,9 @@ struct ChallengeCard: View {
         .background(Color.white)
         .cornerRadius(20)
         .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.black, lineWidth: 1)
+        )
     }
 }
