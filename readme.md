@@ -10,17 +10,11 @@
 
 * 📍 Interactieve kaart met aangepaste markers
 * 💬 Challenge-info verschijnt bij het klikken op een marker
-* 🧠 Challenges zijn afkomstig uit een externe API (via PocketHost)
+* 🧠 Challenges zijn afkomstig uit een externe API (via deze github repo)
 * 👤 Lokale gebruikersprofielen zonder externe login
 * 🛍️ Shop met coins als valuta
 * 🗞️ Voltooide quests geven direct beloning via lokale opslag
 * 🧱 Gebruik van locatie om gebruikerservaring te personaliseren
-
----
-
-## 📲 Screenshots
-
-> *(Screenshots kunnen hier worden toegevoegd wanneer beschikbaar.)*
 
 ---
 
