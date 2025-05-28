@@ -6,7 +6,7 @@
     "price": 100,
     "provider": "Bol.com",
     "code": "BOL-5-EUR-XXXXXX",
-    "image": "shop/bolcom_5.png"
+    "image": "shop_placeholder.png"
   },
   {
     "id": "2",
@@ -15,7 +15,7 @@
     "price": 180,
     "provider": "Amazon",
     "code": "AMZ-10-EUR-XXXXXX",
-    "image": "shop/amazon_10.png"
+    "image": "shop_placeholder.png"
   },
   {
     "id": "3",
@@ -24,7 +24,7 @@
     "price": 250,
     "provider": "PlayStation",
     "code": "PSN-15-EUR-XXXXXX",
-    "image": "shop/playstation_15.png"
+    "image": "shop_placeholder.png"
   },
   {
     "id": "4",
@@ -33,7 +33,7 @@
     "price": 300,
     "provider": "Steam",
     "code": "STEAM-20-EUR-XXXXXX",
-    "image": "shop/steam_20.png"
+    "image": "shop_placeholder.png"
   },
   {
     "id": "5",
@@ -42,6 +42,6 @@
     "price": 180,
     "provider": "Apple",
     "code": "ITUNES-10-EUR-XXXXXX",
-    "image": "shop/itunes_10.png"
+    "image": "shop_placeholder.png"
   }
 ]
