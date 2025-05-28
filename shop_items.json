@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "€5 Bol.com Gift Card",
+    "description": "Receive a digital €5 Bol.com gift card code.",
+    "price": 100,
+    "provider": "Bol.com",
+    "code": "BOL-5-EUR-XXXXXX",
+    "image": "shop/bolcom_5.png"
+  },
+  {
+    "id": "2",
+    "title": "€10 Amazon Gift Card",
+    "description": "Receive a digital €10 Amazon gift card code.",
+    "price": 180,
+    "provider": "Amazon",
+    "code": "AMZ-10-EUR-XXXXXX",
+    "image": "shop/amazon_10.png"
+  },
+  {
+    "id": "3",
+    "title": "€15 PlayStation Store Gift Card",
+    "description": "Use this for games, add-ons and more in the PlayStation Store.",
+    "price": 250,
+    "provider": "PlayStation",
+    "code": "PSN-15-EUR-XXXXXX",
+    "image": "shop/playstation_15.png"
+  },
+  {
+    "id": "4",
+    "title": "€20 Steam Gift Card",
+    "description": "Buy your favorite games on Steam with this €20 code.",
+    "price": 300,
+    "provider": "Steam",
+    "code": "STEAM-20-EUR-XXXXXX",
+    "image": "shop/steam_20.png"
+  },
+  {
+    "id": "5",
+    "title": "€10 iTunes Gift Card",
+    "description": "Perfect for apps, music, and more via the Apple Store.",
+    "price": 180,
+    "provider": "Apple",
+    "code": "ITUNES-10-EUR-XXXXXX",
+    "image": "shop/itunes_10.png"
+  }
+]
