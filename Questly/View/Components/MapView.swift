@@ -10,11 +10,6 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    struct MapPin: Identifiable {
-        let id = UUID()
-        let coordinate: CLLocationCoordinate2D
-    }
-
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 50.8503, longitude: 4.3517),
         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
@@ -28,18 +23,16 @@ struct MapView: View {
         }
     }
 
-    let pins: [MapPin] = [
-        MapPin(coordinate: CLLocationCoordinate2D(latitude: 50.8606, longitude: 4.3517)),
-        MapPin(coordinate: CLLocationCoordinate2D(latitude: 50.8500, longitude: 4.3425))
-    ]
+    @State private var challenges: [Challenge] = []
 
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: pins) { pin in
-            MapMarker(coordinate: pin.coordinate, tint: .red)
+        Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: challenges) { challenge in
+            MapMarker(coordinate: challenge.coordinate, tint: .red)
         }
         .ignoresSafeArea(edges: .top)
         .onAppear {
             requestUserLocation()
+            fetchChallenges()
         }
     }
 
@@ -52,5 +45,28 @@ struct MapView: View {
                 userLocation = location
             }
         }
+    }
+
+    func fetchChallenges() {
+        guard let url = URL(string: "https://raw.githubusercontent.com/ArnoBaeck/Questly/refs/heads/main/challenges.json") else {
+            print("Invalid URL")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                do {
+                    let decoded = try JSONDecoder().decode([Challenge].self, from: data)
+                    DispatchQueue.main.async {
+                        self.challenges = decoded
+                        print("Challenges loaded: \(decoded.count)")
+                    }
+                } catch {
+                    print("Decode error: \(error)")
+                }
+            } else if let error = error {
+                print("Fetch error: \(error.localizedDescription)")
+            }
+        }.resume()
     }
 }

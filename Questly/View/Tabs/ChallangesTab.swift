@@ -7,17 +7,107 @@
 
 import Foundation
 import SwiftUI
+import MapKit
 
 struct ChallengesTab: View {
+    @State private var challenges: [Challenge] = []
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("All quests")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.horizontal)
+
+                ForEach(challenges) { challenge in
+                    ChallengeCard(challenge: challenge)
+                        .padding(.horizontal)
+                }
+            }
+            .padding(.top)
+        }
+        .onAppear {
+            fetchChallenges()
+        }
+        .background(Color.white.ignoresSafeArea())
+    }
+
+    func fetchChallenges() {
+        guard let url = URL(string: "https://raw.githubusercontent.com/ArnoBaeck/Questly/refs/heads/main/challenges.json") else {
+            print("Invalid URL")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let data = data {
+                do {
+                    let decoded = try JSONDecoder().decode([Challenge].self, from: data)
+                    DispatchQueue.main.async {
+                        self.challenges = decoded
+                    }
+                } catch {
+                    print("Error decoding:", error)
+                }
+            } else if let error = error {
+                print("error loading:", error.localizedDescription)
+            }
+        }.resume()
+    }
+}
+
+struct ChallengeCard: View {
+    var challenge: Challenge
+
     var body: some View {
         VStack {
-            Text("Challenges coming soon...")
-                .font(.title)
-                .padding(.horizontal)
+            ZStack(alignment: .topTrailing) {
+                Map(coordinateRegion: .constant(
+                    MKCoordinateRegion(
+                        center: challenge.coordinate,
+                        span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+                    )
+                ), annotationItems: [challenge]) { _ in
+                    MapMarker(coordinate: challenge.coordinate, tint: .red)
+                }
+                .frame(height: 150)
+                .cornerRadius(20)
+                .disabled(true)
 
-            Spacer()
+                Text("\(challenge.reward) coins")
+                    .font(.subheadline)
+                    .bold()
+                    .padding(6)
+                    .background(Color.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                    .cornerRadius(12)
+                    .padding(8)
+            }
+
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(challenge.title)
+                        .bold()
+                    Text(challenge.location ?? "Brussel")
+                        .foregroundColor(.gray)
+                        .font(.subheadline)
+                }
+
+                Spacer()
+
+                Image(systemName: "chevron.right")
+            }
+            .padding([.horizontal, .bottom], 12)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white.ignoresSafeArea())
+        .background(Color.white)
+        .cornerRadius(20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.black, lineWidth: 1)
+        )
+        .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
     }
 }
