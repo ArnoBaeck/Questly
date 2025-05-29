@@ -31,7 +31,6 @@ struct MapView: View {
             Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: challenges) { challenge in
                 MapAnnotation(coordinate: challenge.coordinate) {
                     VStack(spacing: 8) {
-                        // Marker knop
                         Button(action: {
                             withAnimation {
                                 if selectedChallengeID == challenge.id {
@@ -50,11 +49,10 @@ struct MapView: View {
                                 .shadow(radius: 4)
                         }
 
-                        // Beschrijving en knop
                         if selectedChallengeID == challenge.id {
                             VStack(spacing: 6) {
                                 Text(challenge.description)
-                                    .font(.subheadline) // iets groter dan caption
+                                    .font(.subheadline)
                                     .multilineTextAlignment(.center)
                                     .padding(6)
                                     .background(Color.white)
